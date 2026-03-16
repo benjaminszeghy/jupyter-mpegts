@@ -1,0 +1,18 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.5.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: benjamin.szeghy@berkeley.edu
+author_name: Benjamin Szeghy
+create_claude_symlink: false
+create_gemini_symlink: false
+has_ai_rules: true
+has_binder: true
+has_settings: false
+kind: frontend
+labextension_name: jupyter-mpegts
+project_short_description: A JupyterLab extension to add a widget that plays mpeg-ts
+    streams
+python_name: jupyter_mpegts
+repository: https://github.com/benjaminszeghy/jupyter-mpegts
+test: true
+
