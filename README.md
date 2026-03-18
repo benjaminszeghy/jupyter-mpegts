@@ -3,7 +3,6 @@
 [![Github Actions Status](https://github.com/benjaminszeghy/jupyter-mpegts/workflows/Build/badge.svg)](https://github.com/benjaminszeghy/jupyter-mpegts/actions/workflows/build.yml)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminszeghy/jupyter-mpegts/main?urlpath=lab)
 
-
 A JupyterLab extension that adds an ipywidget for playing live MPEG-TS streams in notebooks.
 
 ## What This Extension Does

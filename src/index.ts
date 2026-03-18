@@ -13,7 +13,8 @@ const EXTENSION_ID = 'jupyter-mpegts:plugin';
  */
 const plugin: IPlugin<Application<Widget>, void> = {
   id: EXTENSION_ID,
-  description: 'A JupyterLab extension to add a widget that plays mpeg-ts streams',
+  description:
+    'A JupyterLab extension to add a widget that plays mpeg-ts streams',
   requires: [IJupyterWidgetRegistry, INotebookTracker],
   autoStart: true,
   activate: (
