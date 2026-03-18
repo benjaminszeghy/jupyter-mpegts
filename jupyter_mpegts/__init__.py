@@ -8,6 +8,8 @@ except ImportError:
     warnings.warn("Importing 'jupyter_mpegts' outside a proper installation.")
     __version__ = "dev"
 
+from jupyter_mpegts.widget import mpegts_widget as mpegts_widget
+
 
 def _jupyter_labextension_paths():
     return [{

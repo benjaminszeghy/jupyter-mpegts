@@ -4,7 +4,24 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminszeghy/jupyter-mpegts/main?urlpath=lab)
 
 
-A JupyterLab extension to add a widget that plays mpeg-ts streams
+A JupyterLab extension that adds an ipywidget for playing live MPEG-TS streams in notebooks.
+
+## What This Extension Does
+
+This package provides a simple Python widget API for playing an MPEG-TS stream in a notebook output.
+
+### How To Use
+
+- `display_mpegts(source: str)`: set the stream URL and return the widget.
+
+Example:
+
+```python
+from jupyter_mpegts import mpegts_widget
+
+player = mpegts_widget().display_mpegts("http://127.0.0.1:8080/stream.ts")
+player
+```
 
 ## Requirements
 
@@ -41,44 +58,44 @@ The `jlpm` command is JupyterLab's pinned version of
 # Change directory to the jupyter_mpegts directory
 
 # Set up a virtual environment and install package in development mode
-python -m venv .venv
+uv venv
 source .venv/bin/activate
-pip install --editable "."
+uv pip install --editable "."
 
 # Link your development version of the extension with JupyterLab
-jupyter labextension develop . --overwrite
+uv run jupyter labextension develop . --overwrite
 
 # Rebuild extension Typescript source after making changes
 # IMPORTANT: Unlike the steps above which are performed only once, do this step
 # every time you make a change.
-jlpm build
+uv run jlpm build
 ```
 
 You can watch the source directory and run JupyterLab at the same time in different terminals to watch for changes in the extension's source and automatically rebuild the extension.
 
 ```bash
 # Watch the source directory in one terminal, automatically rebuilding when needed
-jlpm watch
+uv run jlpm watch
 # Run JupyterLab in another terminal
-jupyter lab
+uv run jupyter lab
 ```
 
 With the watch command running, every saved change will immediately be built locally and available in your running JupyterLab. Refresh JupyterLab to load the change in your browser (you may need to wait several seconds for the extension to be rebuilt).
 
-By default, the `jlpm build` command generates the source maps for this extension to make it easier to debug using the browser dev tools. To also generate source maps for the JupyterLab core extensions, you can run the following command:
+By default, the `uv run jlpm build` command generates the source maps for this extension to make it easier to debug using the browser dev tools. To also generate source maps for the JupyterLab core extensions, you can run the following command:
 
 ```bash
-jupyter lab build --minimize=False
+uv run jupyter lab build --minimize=False
 ```
 
 ### Development uninstall
 
 ```bash
-pip uninstall jupyter_mpegts
+uv pip uninstall jupyter_mpegts
 ```
 
-In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
-command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
+In development mode, you will also need to remove the symlink created by `uv run jupyter labextension develop`
+command. To find its location, you can run `uv run jupyter labextension list` to figure out where the `labextensions`
 folder is located. Then you can remove the symlink named `jupyter-mpegts` within that folder.
 
 ### Testing the extension
@@ -90,8 +107,8 @@ This extension is using [Jest](https://jestjs.io/) for JavaScript code testing.
 To execute them, execute:
 
 ```sh
-jlpm
-jlpm test
+uv run jlpm
+uv run jlpm test
 ```
 
 #### Integration tests
